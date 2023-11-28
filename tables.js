@@ -1,20 +1,16 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('test2.db');
+const db = new sqlite3.Database('test3.db');
 
-let schema = `
-create table(
-id integer primary key,
-name text,
-age integer
-);
+let sql = `
+select name from sqlite_master where type='table';
 `;
 
 db.serialize( () => {
-	db.run(schema, (error, row) => {
+	db.each(sql, (error, row) => {
 		if(error) {
 			console.log('Error: ', error );
 			return;
 		}
-		console.log("テーブル作成");
+		console.log(row.name);
 	});
 });
