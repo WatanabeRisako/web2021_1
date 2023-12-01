@@ -2,9 +2,13 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('test3.db');
 
 let schema = `
-create table NAME(
+create table TotK(
   id integer primary key,
-  name text not null
+  name text not null,
+  data_id integer,
+  map_id integer,
+  map2_id integer,
+  treasure_id intesure
 );
 `
 

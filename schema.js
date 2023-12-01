@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('test3.db');
 
 let sql = `
-select NAME,sql from sqlite_master where type='table';
+select TREASURE,sql from sqlite_master where type='table';
 `;
 
 db.serialize( () => {
