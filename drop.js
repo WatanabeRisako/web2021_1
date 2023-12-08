@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('test3.db');
 
 let sql = `
-drop table Totk;
+drop table テーブル名;
 `
 
 db.serialize( () => {

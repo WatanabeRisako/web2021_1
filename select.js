@@ -2,9 +2,23 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('test3.db');
 
  let sql = `
-select id,name,data_id,map_id,map2_id,treasure_id from TotK inner join Data on TotK.data_id = Data.id where data_id=2;
+select TotK.id, data.id as did,
+name, 
+Data.data_name, 
+Map.map_name,
+Map2.map2_name,
+Treasure.treasure_name
+from TotK 
+inner 
+join Data on TotK.data_id = Data.id 
+join Map on TotK.map_id = Map.id
+join Map2 on TotK.map2_id = Map2.id
+join Treasure on TotK.treasure_id = Treasure.id
+where data_id=2;
  `
-// inner join DATA on TotK.data = DATA.id where TotK.data=2
+//,map_id,map2_id,treasure_id
+//inner join Data on TotK.data_id = Data.id 
+
 
 
 db.serialize( () => {
@@ -14,7 +28,7 @@ db.serialize( () => {
 			return;
 		}
 		for( let data of row ) {
-			console.log( data.id + ' : ' + data.name + ' : ' + data.data_id + ' : ' + data.map_id + ' : ' + data.map2_id + ' : ' + data.treasure_id);
+			console.log( data.id + ' : ' + data.name + ' : ' + data.data_name + ' : ' + data.map_name + ' : ' + data.map2_name + ' : ' + data.treasure_name);
 		}
 	});
 });
