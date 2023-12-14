@@ -11,7 +11,7 @@ app2.js | テンプレートファイルshow.ejsを使用したHello World
 app3.js | app2.jsにpublicディレクトリの処理を加えたもの
 app4.js | app3.jsにファイルが見つからなかった場合の処理を加えたもの
 app5.js | データベースから都道府県，人口を取得して返す
-app6.js | 都道府県，人口の表示数をページから取得する
+index.js | 都道府県，人口の表示数をページから取得する
 public | 静的なページデータ
 views | テンプレートファイル
 create.js | テーブルを登録するサンプル
