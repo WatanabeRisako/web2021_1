@@ -9,18 +9,38 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}));
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: true}));
+
 app.get("/", (req, res) => {
   const message = "Hello world";
   res.render('show', {mes:message});
 });
 
-app.get("/db", (req, res) => {
+app.get("/home", (req, res) => {
     db.serialize( () => {
-        db.all("select id, 都道府県, 人口 , 大学 from example;", (error, row) => {
+        db.all("select TotK.id ,name from TotK;", (error, row) => {
             if( error ) {
                 res.render('show', {mes:"エラーです"});
             }
-            res.render('select', {data:row});
+            res.render('home', {data:row});
+        })
+    })
+})
+
+
+
+app.get("/detail/:id", (req, res) => {
+  let sql= "select Data.data_name as dname, Map.map_name as mname, Map2.map2_name as m2name,Treasure.treasure_name as tname from TotK inner join Data on TotK.data_id = data.id join Map on TotK.map_id = Map.id join Map2 on TotK.map2_id = Map2.id join Treasure on TotK.treasure_id = Treasure.id where Totk.id =" + req.params.id + ";"
+  // let params = [req.params.id];
+  console.log(sql);
+    db.serialize( () => {
+        db.all(sql, (error, row) => {
+            if( error ) {
+                res.render('show', {mes:"エラーです"});
+            }
+          console.log(row);
+            res.render('detail', {data:row});
         })
     })
 })

@@ -11,7 +11,7 @@ db.serialize( () => {
 			console.log('Error: ', error );
 			return;
 		}
-		console.log( "テーブル名 : " + row.name );
+		console.log( "TotK : " + row.name );
 		console.log( "Schema : " + row.id );
 		console.log();
 	});
