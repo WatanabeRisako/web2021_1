@@ -5,6 +5,26 @@
   <title>Show message</title>
 </head>
 <body>
+  <form action="/top">
+    <select class="all" name="全体">
+      <option value="" selected="selected">選択</option>
+      <option value="種類">種類</option>
+      <option value="マップ">マップ</option>
+      <option value="地方">地方</option>
+      <option value="宝箱の中身">宝箱の中身</option>
+    </select>
+      
+    <select class="some" name="詳細" desabled>
+      <option value="" selected="selected">選択</option>
+      <option value="謎解き" data-val="種類">謎解き</option>
+      <option value="一身" data-val="種類">一身</option>
+      <option value="戦いの教え" data-val="種類">戦いの教え</option>
+      <option value="祝福" data-val="種類">祝福</option>
+      <option value="陸" data-val="マップ">陸</option>
+    </select>
+    <!-- <input type="name" name="pop" id="pop"> -->
+    <input type="submit" value="送信">
+  </form>
   <h2>一覧</h2>
   <table>
       <% for( let row of data ) { %>

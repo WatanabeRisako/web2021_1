@@ -8,12 +8,11 @@
   <h2>詳細</h2>
   <table>
       <% for( let row of data ) { %>
-        <tr>
-          　<td><%= row.data_id %></td>
-            <td><%= row.map_id %></td>
-            <td><%= row.map2_id %></td>
-            <td><%= row.treasure_id %></td>
-        </tr>
+        <tr><td>種類</td><td><%= row.dname %></td></tr>
+        <tr><td>マップ</td><td><%= row.mname %></td></tr> 
+        <tr><td>地方</td><td><%= row.m2name %></td></tr>
+        <tr><td>宝箱の中身</td><td><%= row.tname %></td></tr> 
+  
       <% } %>
   </table>
 </body>
