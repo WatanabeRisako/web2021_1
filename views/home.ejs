@@ -5,34 +5,42 @@
   <title>Show message</title>
 </head>
 <body>
-  <form action="/top">
-    <select class="all" name="全体">
-      <option value="" selected="selected">選択</option>
-      <option value="種類">種類</option>
-      <option value="マップ">マップ</option>
-      <option value="地方">地方</option>
-      <option value="宝箱の中身">宝箱の中身</option>
-    </select>
-      
-    <select class="some" name="詳細" desabled>
-      <option value="" selected="selected">選択</option>
-      <option value="謎解き" data-val="種類">謎解き</option>
-      <option value="一身" data-val="種類">一身</option>
-      <option value="戦いの教え" data-val="種類">戦いの教え</option>
-      <option value="祝福" data-val="種類">祝福</option>
-      <option value="陸" data-val="マップ">陸</option>
-    </select>
-    <!-- <input type="name" name="pop" id="pop"> -->
-    <input type="submit" value="送信">
-  </form>
   <h2>一覧</h2>
+    種類<button onclick="location.href='./data_1'">謎解き</button>
+        <button onclick="location.href='./data_2'">一身</button>
+        <button onclick="location.href='./data_3'">戦いの教え</button>
+        <button onclick="location.href='./data_4'">祝福</button>
+<br>
+  マップ<button onclick="location.href='./map_1'">陸</button>
+        <button onclick="location.href='./map_2'">空</button>
+<br>
+  地方<button onclick="location.href='./map2_1'">中央ハイラル</button>
+      <button onclick="location.href='./map2_2'">へブラ地方</button>
+      <button onclick="location.href='./map2_3'">オルディン地方</button>
+      <button onclick="location.href='./map2_4'">アッカレ地方</button>
+      <button onclick="location.href='./map2_5'">ハテール地方</button>
+      <button onclick="location.href='./map2_6'">ラネール地方</button>
+      <button onclick="location.href='./map2_7'">ゲルド地方</button>
+      <button onclick="location.href='./map2_8'">フィローネ地方</button>
+<br>
+  宝箱の中身<button onclick="location.href='./treasure_1'">装備</button>
+          <button onclick="location.href='./treasure_2'">武器</button>
+          <button onclick="location.href='./treasure_3'">宝石</button>
+          <button onclick="location.href='./treasure_4'">ゾナウ関係</button>
+          <button onclick="location.href='./treasure_5'">薬</button>
+          <button onclick="location.href='./treasure_6'">素材</button>
+  
   <table>
       <% for( let row of data ) { %>
         <tr>
+          <ur>
             <td><%= row.id %></td>
             <td><a href="/detail/<%= row.id %>"><%= row.name %></a><br></td>
-        </tr>
+          </ur>
+           </tr>
       <% } %>
-  </table>
+          
+</table>
+        <td><a href="/home">一覧に戻る</a></td>
 </body>
 </html>

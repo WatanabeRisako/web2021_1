@@ -3,9 +3,9 @@
     "index.js": [
       {
         "id": "0d55092d-8490-446c-a87d-6bd850fabd96",
-        "line": 39,
-        "version": 1100,
-        "index": 1268
+        "line": 53,
+        "version": 1457,
+        "index": 1661
       }
     ],
     "insert.js": [
@@ -14,20 +14,6 @@
         "line": 81,
         "version": 3796,
         "index": 3537
-      }
-    ],
-    "views/home.ejs": [
-      {
-        "id": "451911ca-58bb-49dd-9787-53a8a9df3572",
-        "line": 14,
-        "version": 1650,
-        "index": 338
-      },
-      {
-        "id": "91c78e38-7203-428d-8d9a-ea33232b08db",
-        "line": 16,
-        "version": 1650,
-        "index": 398
       }
     ]
   }
