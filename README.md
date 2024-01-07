@@ -22,4 +22,34 @@ select.js | テーブルからデータを取得するサンプル
 tables.js | テーブル名を表示するサンプル
 test.db | app5.jsやapp6.jsで使用するデータベース
 
-test
+data table
+id | data_name
+1  | 謎解き
+2  | 一身
+3  | 戦いの教え
+4  | 祝福
+
+map table
+id | map_name
+1  | 陸
+2  | 空
+
+map2 table
+id | map2_name
+1  | 中央ハイラル
+2  | へブラ地方
+3  | オルディン地方
+4  | アッカレ地方
+5  | ハテール地方
+6  | ラネール地方
+7  | ゲルド地方
+8  | フィローネ地方
+
+treasure table
+id | treasure_name
+1  | 装備
+2  | 武器
+3  | 宝石
+4  | ゾナウ関係
+5  | 薬
+6  | 素材
